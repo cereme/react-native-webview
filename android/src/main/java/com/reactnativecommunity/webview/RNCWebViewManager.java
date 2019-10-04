@@ -496,7 +496,7 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
     // This prop will ensure no background activity will occur while playing any media in a webview
     // In cases where this prop is not set and a media streaming is consumed inside the WebView,
     // You might experience  "Device and Network abuse" policy problems in Play Store.
-    ((RNCWebView) view).setHasScrollEvent(useHostResumeAndPause);
+    ((RNCWebView) view).setUseHostResumeAndPause(useHostResumeAndPause);
   }
   
 
@@ -917,7 +917,7 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
 
     @Override
     public void onHostResume() {
-      if (useHostResumeAndPause) {
+      if (this.useHostResumeAndPause) {
         super.onResume();
       }
       // do nothing
@@ -925,7 +925,7 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
 
     @Override
     public void onHostPause() {
-       if (useHostResumeAndPause) {
+       if (this.useHostResumeAndPause) {
         super.onPause();
       }
       // do nothing
