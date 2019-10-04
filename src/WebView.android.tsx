@@ -49,6 +49,7 @@ class WebView extends React.Component<AndroidWebViewProps, State> {
     thirdPartyCookiesEnabled: true,
     scalesPageToFit: true,
     allowsFullscreenVideo: false,
+    useNativeResumeAndPauseLifecycleEvents: false,
     allowFileAccess: false,
     saveFormDataDisabled: false,
     cacheEnabled: true,
